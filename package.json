@@ -1,0 +1,21 @@
+{
+  "name": "mean_Project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/app",
+    "dev": "nodemon server/app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "moment": "^2.18.1",
+    "pug": "^2.0.0-rc.1",
+    "request": "^2.81.0"
+  }
+}
