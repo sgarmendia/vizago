@@ -16,6 +16,7 @@
     "express": "^4.15.3",
     "moment": "^2.18.1",
     "pug": "^2.0.0-rc.1",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   }
 }

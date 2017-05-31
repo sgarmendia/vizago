@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+    .appTitle
+      h1 vizago
+      p AI biometrics for all...
+    .container
+      if att
+        p The image is of a #{att.ethnicity.value} #{att.gender.value}, aprox #{att.age.value} years old
+      
+      .row
+        br
+        br
+        form#togglingForm.form-horizontal(method='POST', action='/analyse')
+          .form-group
+            .col-xs-9.searchDiv
+              input.form-control(type='text', name='source', required='', data-fv-notempty-message='url is required', placeholder='Paste your url here')
+              br
+              label.radio-inline.option Type of analysis: 
+              label.radio-inline.option
+                input(type='radio', name='image', value='terrible', checked='checked')
+                |  Image url
+              label.radio-inline.option
+                input(type='radio', name='video', value='terrible')
+                |  Video
+              label.radio-inline.option
+                input(type='radio', name='turing', value='terrible')
+                |  Turing test
+            .col-xs-2
+              button.btn.btn-primary.analyseButton(type='button', data-toggle='#jobInfo') Analyse
+            
+

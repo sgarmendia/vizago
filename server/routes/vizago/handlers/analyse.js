@@ -1,42 +1,54 @@
-var request = require('request')
+var rp = require('request-promise')
 
 function analyse (req, res) {
 
-    // const { url } = req.body
+  console.log('analysis running')
+
+  const { source } = req.body
+
+  //const source = 'https://s-media-cache-ak0.pinimg.com/236x/92/4d/7e/924d7efc344d05dce49c5887597549c1.jpg'
+
+  // PARAMETER TO SHOW FACE LANDMARKS - SET AT 0 (DEFAULT) FOR SIMPLER JSON
+  const landmarks = 1
   
-  var options = {
-     url: 'https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=sMTsq5eWZY-zpF0-yCr5XACBtClsfOvg&api_secret=Br-Og55C1c4lSuuxKDOAqcS9bpLF1SHg&face_tokens=0ed99159cbecb5dc05baea8b30230e29&return_landmark=1&return_attributes=gender,age,smiling,headpose,facequality,blur,eyestatus,ethnicity',
+  var tokenRequest = {
+      method: 'POST',
+      url: 'https://api-us.faceplusplus.com/facepp/v3/detect?api_key=sMTsq5eWZY-zpF0-yCr5XACBtClsfOvg&api_secret=Br-Og55C1c4lSuuxKDOAqcS9bpLF1SHg&image_url=' + source,
+      headers: {
+        //'app_id': '16b0caaf',
+        //'app_key': '51b073adf8709fa55caed715ee4adfd8'
+      },
+      json: true 
   }
-  //   headers: {
-  //     'app_id': '16b0caaf',
-  //     'app_key': '51b073adf8709fa55caed715ee4adfd8'
-  //   }
-  // }
-    
-  // function callback(error, response, body) {
 
-  //   if (!error && response.statusCode == 200) {
+  let token, att
 
-  //     console.log('callback running')
-  //     var info = JSON.parse(body)
-  //     console.log(body)
+  rp(tokenRequest)
+      .then(function (data) {
+          
+          token = data.faces[0].face_token
+          
+          var biometricRequest = {
+            method: 'POST',
+            url: 'https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=sMTsq5eWZY-zpF0-yCr5XACBtClsfOvg&api_secret=Br-Og55C1c4lSuuxKDOAqcS9bpLF1SHg&face_tokens=' + token + '&return_landmark=' + landmarks + '&return_attributes=gender,age,smiling,headpose,facequality,blur,eyestatus,ethnicity',
+            json: true 
+          }
 
-  //   }
-  // }
-  
-  request.post(options, function(err,response,body){
+          rp(biometricRequest)
+              .then(function (bioData) {
+          
+                  // console.log(bioData.faces[0].attributes)
+                  att = bioData.faces[0].attributes
+                  res.render('index.pug' , { att })
 
-    if (!err && response.statusCode == 200) {
-      
-      // console.log('callback running')
-      var info = JSON.parse(body)
-      console.log(info)
+          })
 
-    }
-    // console.log(response)
-  })
+      })
+      .catch(function (err) {
+           console.log('Error on request')
+      })
 
-  // request(url, callback)
+// res.end('End of analysis')
 
 }
 

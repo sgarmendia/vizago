@@ -1,0 +1,21 @@
+{
+  "name": "mean_project",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Simon Garmendia <sgarmendia@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
