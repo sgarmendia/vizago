@@ -14,19 +14,14 @@ block content
           .form-group
             .col-xs-9.searchDiv
               input.form-control(type='text', name='source', required='', data-fv-notempty-message='url is required', placeholder='Paste your url here')
-              br
-              label.radio-inline.option Type of analysis: 
-              label.radio-inline.option
-                input(type='radio', name='image', value='terrible', checked='checked')
-                |  Image url
-              label.radio-inline.option
-                input(type='radio', name='video', value='terrible')
-                |  Video
-              label.radio-inline.option
-                input(type='radio', name='turing', value='terrible')
-                |  Turing test
             .col-xs-2
               button.btn.btn-primary.analyseButton(type='button', data-toggle='#jobInfo') Analyse
+      .camera
+        video#video Video stream not available.
+        button#startbutton Take photo
+      canvas#canvas
+      .output
+        img#photo(alt='The screen capture will appear in this box.')
     if att && source
       .imageInfo
         .image
@@ -39,12 +34,7 @@ block content
             li.list-group-item Type of glasses: #{att.glass.value}
             li.list-group-item Smiling: #{smile}
             li.list-group-item Confidence: #{conf} - blur index: #{blurIndex}
-    if !(att && source)
-      .camera
-        video#video Video stream not available.
-        button#startbutton Take photo
-      canvas#canvas.hidden
-      .output
-        img#photo(alt='The screen capture will appear in this box.')
+   
+      
       
 

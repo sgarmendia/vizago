@@ -1,8 +1,9 @@
+
 body {
       font-family: calibri;
       background-image: url('/img/bck.jpg');
       background-size: cover;
-      background-repeat:   no-repeat;
+      background-repeat: no-repeat;
 }
 
 .searchDiv {
