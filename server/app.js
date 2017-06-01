@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// app.get('/', (req, res) => res.render('index.pug'))
+app.get('/', (req, res) => res.render('index.pug'))
 app.use('/', routerVizago)
 
 app.listen(PORT, console.log(`Active PORT: ${PORT}`))

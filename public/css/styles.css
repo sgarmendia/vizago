@@ -1,6 +1,6 @@
 body {
       font-family: calibri;
-      background-image: url('http://marketingland.com/wp-content/ml-loads/2015/12/ss-facial-recognition-biometrics-technology-woman-future.jpg');
+      background-image: url('/img/bck.jpg');
       background-size: cover;
       background-repeat:   no-repeat;
 }
@@ -29,4 +29,30 @@ body {
 .analyseButton {
       font-family: 'Share Tech Mono', monospace;
       font-size: 15px;
+}
+
+.imageInfo {
+      display: flex;
+      justify-content: flex-start;
+}
+.image {
+      width: 400px;
+      padding-left: 50px;
+}
+
+.info {
+      align-self: center;
+      margin-left: 15px
+}
+
+.list-group-item {
+      
+      font-family: 'Share Tech Mono', monospace;
+      background: transparent;
+      font-size: 20px;
+      font-weight: bold;
+}
+
+img {
+      width: 100%;
 }

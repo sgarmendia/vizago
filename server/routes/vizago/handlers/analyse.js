@@ -6,8 +6,6 @@ function analyse (req, res) {
 
   const { source } = req.body
 
-  //const source = 'https://s-media-cache-ak0.pinimg.com/236x/92/4d/7e/924d7efc344d05dce49c5887597549c1.jpg'
-
   // PARAMETER TO SHOW FACE LANDMARKS - SET AT 0 (DEFAULT) FOR SIMPLER JSON
   const landmarks = 1
   
@@ -21,7 +19,7 @@ function analyse (req, res) {
       json: true 
   }
 
-  let token, att
+  let token, att, smile, conf, blurIndex
 
   rp(tokenRequest)
       .then(function (data) {
@@ -36,19 +34,34 @@ function analyse (req, res) {
 
           rp(biometricRequest)
               .then(function (bioData) {
-          
-                  // console.log(bioData.faces[0].attributes)
+                  
                   att = bioData.faces[0].attributes
-                  res.render('index.pug' , { att })
+
+                  if (att.smile.value > att.smile.threshold) {
+                    smile = 'yes'
+                  } else {
+                    smile = 'no'
+                  }
+
+                  conf = Math.floor( (att.facequality.value / att.facequality.threshold ) * 100) / 100
+
+                  let bb, mb, gb
+
+                  bb = att.blur.blurness.value / att.blur.blurness.threshold
+                  mb = att.blur.motionblur.value / att.blur.motionblur.threshold
+                  gb = att.blur.gaussianblur.value / att.blur.gaussianblur.threshold
+
+                  blurIndex = Math.round(( ( bb + mb + gb) / 3 ) * 10000) /100
+
+                  res.render('index.pug' , { att , source ,smile, conf, blurIndex })
 
           })
 
       })
       .catch(function (err) {
-           console.log('Error on request')
+           res.end('Error on request')
       })
 
-// res.end('End of analysis')
 
 }
 

@@ -6,9 +6,6 @@ block content
       h1 vizago
       p AI biometrics for all...
     .container
-      if att
-        p The image is of a #{att.ethnicity.value} #{att.gender.value}, aprox #{att.age.value} years old
-      
       .row
         br
         br
@@ -29,5 +26,18 @@ block content
                 |  Turing test
             .col-xs-2
               button.btn.btn-primary.analyseButton(type='button', data-toggle='#jobInfo') Analyse
-            
+    if att && source
+      .imageInfo
+        .image
+          img.photo(src= source)
+        .info
+          ul.infoList.list-group
+            li.list-group-item Aproximate age: #{att.age.value} 
+            li.list-group-item Gender: #{att.gender.value}
+            li.list-group-item Ethnicity: #{att.ethnicity.value}
+            li.list-group-item Type of glasses: #{att.glass.value}
+            li.list-group-item Smiling: #{smile}
+            li.list-group-item Confidence: #{conf} - blur index: #{blurIndex}
+
+        
 
