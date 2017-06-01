@@ -3,12 +3,17 @@
 ### A cool biometric application...!
 
 
+![m'lady](C:\Users\SG\Pictures\Camera Roll\vizagoLanding.jpg)
 
+## Analyse Image with url
 
-## Add New Task
+curl -X POST --data "url" localhost:3000/analyse
 
-curl -X POST --data "name=Buy Gold" localhost:3000/task/add
+## The information provided by the analysis will include:
 
-## Delete Task (by Id)
+- Lorem
+- Ipsum
+- Sepultum
 
-curl -X DELETE localhost:3000/task/del/5926bb45ec7611fb31ae2b29
+## Compare faces and determine if it is a match 
+
