@@ -3,7 +3,8 @@ extends layout
 block content
 
     .appTitle
-      h1 vizago
+      h1
+        a(href='/') vizago
       p AI biometrics for all...
     .container
       .row
@@ -38,6 +39,12 @@ block content
             li.list-group-item Type of glasses: #{att.glass.value}
             li.list-group-item Smiling: #{smile}
             li.list-group-item Confidence: #{conf} - blur index: #{blurIndex}
-
-        
+    if !(att && source)
+      .camera
+        video#video Video stream not available.
+        button#startbutton Take photo
+      canvas#canvas
+      .output
+        img#photo(alt='The screen capture will appear in this box.')
+      
 

@@ -9,10 +9,12 @@ body {
       width: 55%;
 }
 
-.appTitle h1 {
+.appTitle h1 a {
       font-family: 'Baloo Bhaina', cursive;
       padding-left: 50px;
       font-size: 65px;
+      color: black;
+      text-decoration: none;
 }
 
 .appTitle p {
