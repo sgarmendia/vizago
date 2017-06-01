@@ -3,7 +3,7 @@
 ### A cool biometric application...!
 
 
-![m'lady](C:\Users\SG\Pictures\Camera Roll\vizagoLanding.jpg)
+![vizagoLanding](\public\img\vizagoLanding.jpg)
 
 ## Analyse Image with url
 
