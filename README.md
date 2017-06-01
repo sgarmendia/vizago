@@ -2,8 +2,7 @@
 # VIZAGO
 ### A cool biometric application...!
 
-
-![vizagoLanding](public\img\vizagoLanding.jpg)
+![vizagoLanding](public/img/vizagoLanding.jpg)
 
 ## Analyse Image with url
 
