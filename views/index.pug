@@ -17,34 +17,25 @@ block content
               br
               label.radio-inline.option Type of analysis: 
               label.radio-inline.option
-                input(type='radio', name='image', value='terrible', checked='checked')
-                |  Image url
+                a(href='/') Image url
               label.radio-inline.option
-                input(type='radio', name='video', value='terrible')
-                |  Video
+                a(href='/webcam') Video
               label.radio-inline.option
-                input(type='radio', name='turing', value='terrible')
-                |  Turing test
+                a(href='/strong') Strong Analysis
             .col-xs-2
-              button.btn.btn-primary.analyseButton(type='button', data-toggle='#jobInfo') Analyse
+              button.btn.btn-primary.analyseButton(type='submit', data-toggle='#jobInfo') Analyse
     if att && source
       .imageInfo
         .image
           img.photo(src= source)
         .info
           ul.infoList.list-group
-            li.list-group-item Aproximate age: #{att.age.value} 
+            li.list-group-item Aproximate age: #{att.age.value - 8}
             li.list-group-item Gender: #{att.gender.value}
             li.list-group-item Ethnicity: #{att.ethnicity.value}
             li.list-group-item Type of glasses: #{att.glass.value}
             li.list-group-item Smiling: #{smile}
             li.list-group-item Confidence: #{conf} - blur index: #{blurIndex}
-    if !(att && source)
-      .camera
-        video#video Video stream not available.
-        button#startbutton Take photo
-      canvas#canvas.hidden
-      .output
-        img#photo(alt='The screen capture will appear in this box.')
+  
       
 

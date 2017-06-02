@@ -120,35 +120,20 @@ $('img#photo').on('click', (e) => {
   const photo64 = $('img#photo').attr('src')
   const url = '/analysewc'
   const method = 'POST'
-
+  var photo = new FormData();
+  photo.append('photo', photo64);
 
   $.ajax({
-    url,
-    method,
-    data: { photo : $('img').attr('src') } 
+    url: url,
+    data: photo,
+    type: method,
+    contentType: false, 
+    processData: false
   })
   .done( response => {
    
   })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

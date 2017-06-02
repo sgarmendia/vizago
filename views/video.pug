@@ -6,16 +6,6 @@ block content
       h1
         a(href='/') vizago
       p AI biometrics for all...
-    .container
-      .row
-        br
-        br
-        form#togglingForm.form-horizontal(method='POST', action='/analyse')
-          .form-group
-            .col-xs-9.searchDiv
-              input.form-control(type='text', name='source', required='', data-fv-notempty-message='url is required', placeholder='Paste your url here')
-            .col-xs-2
-              button.btn.btn-primary.analyseButton(type='button', data-toggle='#jobInfo') Analyse
       .camera
         video#video Video stream not available.
         button#startbutton Take photo

@@ -8,6 +8,9 @@
 
 curl -X POST --data "url" localhost:3000/analyse
 
+![basicAnalysis](public/img/basicAnalysis.jpg)
+
+
 ## The information provided by the analysis will include:
 
 - Lorem
