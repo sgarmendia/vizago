@@ -27,16 +27,16 @@ function analysesb (req, res) {
           imgUrl = bioData.photos[0].url
           
           if (att.fear.value === true && att.sadness.value === true) {
-                 lie =  (att.fear.confidence + att.sadness.confidence) / 2
+                 lie =  100 * (att.fear.confidence + att.sadness.confidence) / 2
                      
                } else if (att.fear.value === true && att.disgust.value === true) {
-                 lie = (att.fear.confidence*0.6 + att.disgust.confidence*0.4) / 2
+                 lie = 100 * (att.fear.confidence*0.6 + att.disgust.confidence*0.4) / 2
 
                } else if (att.anger.value === true && att.disgust.value === true) {
-                 lie = (att.anger.confidence*0.2 + att.disgust.confidence*0.8) / 2
+                 lie = 100 * (att.anger.confidence*0.2 + att.disgust.confidence*0.8) / 2
 
                } else { 
-                 lie = (att.anger.confidence*0.2 + att.disgust.confidence*0.3 + att.fear.confidence*0.3 + att.sadness.confidence*0.2) / 4 
+                 lie = 100 * (att.anger.confidence*0.2 + att.disgust.confidence*0.3 + att.fear.confidence*0.3 + att.sadness.confidence*0.2) / 4 
 
           }
 
