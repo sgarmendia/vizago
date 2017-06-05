@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/app",
-    "dev": "nodemon server/app"
+    "build:js": "browserify src/js/app.js > public/app.js",
+    "build:js:watch": "watchify -t babelify src/js/app.js -d -o public/app.js -v",
+    "build:scss" : "node-sass src/scss/styles.scss public/styles.css",
+    "build:scss:watch" : "node-sass src/scss/styles.scss public/styles.css --watch",
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +22,14 @@
     "pug": "^2.0.0-rc.1",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "watchify": "^3.9.0"
   }
 }

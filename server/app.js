@@ -3,6 +3,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
 
+// CREATE APP INSTANCE OF EXPRESS
+const app = express()
+
 // DEFINING ROUTES IN ROUTES FILE
 const routerVizago = require('./routes/vizago')
 
@@ -16,11 +19,8 @@ const PORT = process.env.PORT
 // DEFINE VERIFY MIDDLEWARE
 // const verifyVizago = require('./routes/middlewares/verifyvizago')
 
-// CREATE APP INSTANCE OF EXPRESS
-const app = express()
-
 // DEFINING PUG AS VIEW ENGINE 
-app.set('view engine', 'pug')
+// app.set('view engine', 'pug')
 
 // DEFINING 'PUBLIC' FOLDER FOR STATIC DOCS
 app.use(express.static(path.join(__dirname, '../public')))
@@ -33,10 +33,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.get('/', (req, res) => res.render('index.pug'))
-app.get('/webcam', (req, res) => res.render('video.pug'))
-app.get('/strong', (req, res) => res.render('analysesb.pug'))
+// app.get('/', (req, res) => res.render('index.pug'))
+// app.get('/webcam', (req, res) => res.render('video.pug'))
+// app.get('/strong', (req, res) => res.render('analysesb.pug'))
 app.use('/', routerVizago)
 
-app.listen(PORT, console.log(`Active PORT: ${PORT}`))
+module.exports = app
 

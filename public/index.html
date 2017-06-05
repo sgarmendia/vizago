@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vizagoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vizago</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div ng-include="'templates/includes/navbar.html'"></div>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+    <!-- /.container -->
+    <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+</body>
+
+</html>
