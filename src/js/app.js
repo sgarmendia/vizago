@@ -17,7 +17,10 @@ angular.module('vizagoApp', [ angularRoute ])
           templateUrl: '/templates/analysePhoto.html'
           
         })
-        // .when('/contact', {
-        //   template: '<div id="contact"><h1>Contact page</h1></div>'
-        // })
+        .when('/comparePhoto', {
+          templateUrl: '/templates/comparePhoto.html'
+        })
+        .when('/login', {
+          templateUrl: '/templates/login.html'
+        })
   })

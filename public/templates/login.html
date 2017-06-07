@@ -9,7 +9,22 @@
             <div class="form-group">
                 <div class="col-xs-9 searchDiv">
                     <input type="text" class="form-control" name="source" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
-                    <br />
+                    <br/>
+                </div>
+                <div class="col-xs-2">
+                    <button type="button" method="POST" action="/analyse" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <br/>
+        <br/>
+        <form id="togglingForm" method="POST" action="/analyse" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-xs-9 searchDiv">
+                    <input type="text" class="form-control" name="source" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
+                    <br/>
                 </div>
                 <div class="col-xs-2">
                     <button type="button" method="POST" action="/analyse" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
