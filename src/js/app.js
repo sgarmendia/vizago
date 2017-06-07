@@ -14,7 +14,7 @@ angular.module('vizagoApp', [ angularRoute ])
           controller: 'homeController'
         })
         .when('/analysePhoto', {
-          template: '/templates/analysePhoto.html'
+          templateUrl: '/templates/analysePhoto.html'
           
         })
         // .when('/contact', {

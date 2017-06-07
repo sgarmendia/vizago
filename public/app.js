@@ -34626,8 +34626,9 @@ angular.module('vizagoApp', [ angularRoute ])
           templateUrl: '/templates/home.html',
           controller: 'homeController'
         })
-        .when('/about', {
-          template: '<div id="about"><h1>About page</h1></div>'
+        .when('/analysePhoto', {
+          templateUrl: '/templates/analysePhoto.html'
+          
         })
         // .when('/contact', {
         //   template: '<div id="contact"><h1>Contact page</h1></div>'
