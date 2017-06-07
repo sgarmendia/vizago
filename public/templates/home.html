@@ -1,44 +1,38 @@
-<div class="appTitle">
-    <h1><a href="">vizago</a></h1>
-    <p>AI biometrics for all...</p>
+\
+<div class="bg">
+<div class="jumbotron">
+    <div class="container">
+        <h1>vizago</h1>
+        <p>Face recognition technology for all...</p>
+        <!-- <p><a class="btn btn-primary btn-lg" href="" role="button">Learn more</a></p> -->
+    </div>
 </div>
-<div class="container">
+</div>
+<div class="container vizagoOptions">
     <div class="row">
-        <br/>
-        <br/>
-        <form id="togglingForm" method="POST" action="/analyse" class="form-horizontal">
-            <div class="form-group">
-                <div class="col-xs-9 searchDiv">
-                    <input type="text" class="form-control" name="source" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
-                    <br />
-                    <label class="radio-inline option">Type of analysis: </label>
-                    <label class="radio-inline option">
-                        <input type="radio" name="image" value="terrible" checked='checked' /> Image url
-                    </label>
-                    <label class="radio-inline option">
-                        <input type="radio" name="video" value="terrible" /> Video
-                    </label>
-                    <label class="radio-inline option">
-                        <input type="radio" name="turing" value="terrible" /> Turing test
-                    </label>
-                </div>
-                <div class="col-xs-2">
-                    <button type="button" method="POST" action="/analyse" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="#!/analysePhoto"><img class="imgDA" src="/img/wireframe.jpg"></a>
+                <div class="caption">
+                    <h3>Detect & Analyse</h3>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
-<div class="imageInfo">
-    <div class="image">
-        <img src="http://aroundmovies.com/wp-content/uploads/2015/10/Jennifer-Lawrence.jpg" class="photo">
-    </div>
-    <div class="info">
-        <ul class="infoList">
-            <li>AGE</li>
-            <li>EMOTION</li>
-            <li>GENDER</li>
-            <li>EYES</li>
-        </ul>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img class="imgC" src="/img/display-dummy.jpg" href="">
+                <div class="caption">
+                    <h3>Compare</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img class="imgL" src="/img/eyescanner.jpg" href="">
+                <div class="caption">
+                    <h3>Login</h3>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,0 +1,55 @@
+header .top {
+background-color: #3B3B3B;
+}
+header .top .social-icon {
+margin-bottom: 0;
+margin: 10px 0;
+}
+header .top .social-icon a {
+width: 30px;
+height: 30px;
+line-height: 30px;
+border-radius: 15px;
+background-color: #484848;
+display: block;
+text-align: center;
+color: #FFFFFF;
+font-size: 13px;
+}
+header .top .social-icon a:hover {
+background-color: #454545;
+color:#61A615;
+}
+header .top .top-menu {
+margin: 0;
+padding: 10px 0;
+}
+header .top .top-menu a {
+line-height: 30px;
+height: 30px;
+text-transform: uppercase;
+padding: 0 15px;
+color: #fff;
+font-size: 11px;
+}
+header .top .top-menu a.highlight {
+background-color: #61A615;
+display: block;
+border-radius: 2px;
+}
+header .top .top-menu .form-group {
+position: relative;
+}
+header .top .top-menu .form-group label {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+header .top .top-menu .form-group .form-control {
+background-color: #484848;
+border:none;
+height: 30px;
+}

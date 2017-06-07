@@ -10,11 +10,11 @@ const app = express()
 const routerVizago = require('./routes/vizago')
 
 //DEFINING PRODUCTION ENVIROMENT PARAMETERS
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   require('dotenv').config()
+// }
 
-const PORT = process.env.PORT
+// const PORT = process.env.PORT
 
 // DEFINE VERIFY MIDDLEWARE
 // const verifyVizago = require('./routes/middlewares/verifyvizago')
@@ -36,7 +36,7 @@ app.use(bodyParser.json())
 // app.get('/', (req, res) => res.render('index.pug'))
 // app.get('/webcam', (req, res) => res.render('video.pug'))
 // app.get('/strong', (req, res) => res.render('analysesb.pug'))
-app.use('/', routerVizago)
+// app.use('/', routerVizago)
 
 module.exports = app
 
