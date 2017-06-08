@@ -21,17 +21,43 @@
             <img src="{{ source }}" class="photo">
         </div>
         <div ng-show="faceData" class="info col-md-3">
-            <ul class="infoList">
-                <ng-gauge size="180" type="arch" thick="15" 
-          value="faceData.age_est.value" cap="butt" label="age" 
+        <ul class="infoList">
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.age_est.value" cap="butt" label="Age" 
           append="years"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.anger.confidence" cap="butt" label="Anger" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.disgust.confidence" cap="butt" label="Disgust" 
+          append="confidence" foreground-color=""></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.fear.confidence" cap="butt" label="Fear" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.happiness.confidence" cap="butt" label="Happiness" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.happiness.confidence" cap="butt" label="Happiness" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.sadness.confidence" cap="butt" label="Sadness" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.surprise.confidence" cap="butt" label="Surprise" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.mood.confidence" cap="butt" label="Mood" 
+          append="confidence"></ng-gauge>
+                <ng-gauge size="100" type="arch" thick="15" 
+          value="faceData.neutral_mood.confidence" cap="butt" label="Neutral" 
+          append="confidence"></ng-gauge>
           
+            
                 <li>Estimated age: {{ faceData.age_est.value }}</li>
                 <li>The gender is: {{ faceData.gender.value }}</li>
                 <li>Wearing glasses: {{ faceData.glasses.value }}</li>
                 <li>Mood: {{ faceData.mood.value }}</li>
-                <!-- <canvas-gauge width="160" under-color="#EFEFEF" over-color="#FFD700" value="males" mask="(@)%"
-style="color: gray"></canvas-gauge> -->
 
             </ul>
         </div>
