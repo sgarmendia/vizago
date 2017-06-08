@@ -1,11 +1,12 @@
 const angular = require('angular')
-const angularRoute = require("angular-route");
+const angularRoute = require('angular-route')
+const angularjsgauge = require('angularjs-gauge')
 
 const homeController = require('./controllers/homeController')
 const analysisController = require('./controllers/analysisController')
 const faceAnalysisService = require('./services/faceAnalysisService')
 
-angular.module('vizagoApp', [ angularRoute ])
+angular.module('vizagoApp', [ angularRoute, angularjsgauge ])
 
 	.factory('faceAnalysisService', faceAnalysisService)
 

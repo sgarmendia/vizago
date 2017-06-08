@@ -97,6 +97,10 @@ header .top .top-menu .form-group .form-control {
   max-width: 100%;
   max-height: 100%; }
 
+.compare {
+  display: flex;
+  justify-content: space-between; }
+
 body {
   background: url("/img/tron__grid.jpg") no-repeat;
   background-size: cover;
