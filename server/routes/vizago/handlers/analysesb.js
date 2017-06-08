@@ -17,14 +17,13 @@ function analysesb (req, res) {
       json: true 
   }
 
-  let att, lie, imgUrl
+  let att, lie
 
        
   rp(biometricRequest)
       .then(function (bioData) {
 
           att = bioData.photos[0].tags[0].attributes
-          imgUrl = bioData.photos[0].url
           
           if (att.fear.value === true && att.sadness.value === true) {
                  lie = 10 * (att.fear.confidence + att.sadness.confidence) / 2
@@ -39,7 +38,9 @@ function analysesb (req, res) {
                  lie = 10 * (att.anger.confidence*0.2 + att.disgust.confidence*0.3 + att.fear.confidence*0.3 + att.sadness.confidence*0.2) / 4 
           }
 
-          res.render('analysesb.pug' , { att , lie, imgUrl })
+          att.lie = Math.floor(lie * 100) / 100
+
+          res.json(att)
      
   })
 

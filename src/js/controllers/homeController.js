@@ -1,8 +1,9 @@
 function homeController($scope, faceAnalysisService) {
+      
 
 
-	faceAnalysisService.faceAnalysis()
-		.then(faceData => $scope.faceData = faceData)
+	// faceAnalysisService.faceAnalysis()
+	// 	.then(faceData => $scope.faceData = faceData)
 
 }
 

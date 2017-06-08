@@ -36,7 +36,7 @@ app.use(bodyParser.json())
 // app.get('/', (req, res) => res.render('index.pug'))
 // app.get('/webcam', (req, res) => res.render('video.pug'))
 // app.get('/strong', (req, res) => res.render('analysesb.pug'))
-// app.use('/', routerVizago)
+app.use('/', routerVizago)
 
 module.exports = app
 

@@ -2,11 +2,16 @@ const angular = require('angular')
 const angularRoute = require("angular-route");
 
 const homeController = require('./controllers/homeController')
+const analysisController = require('./controllers/analysisController')
 const faceAnalysisService = require('./services/faceAnalysisService')
 
 angular.module('vizagoApp', [ angularRoute ])
+
 	.factory('faceAnalysisService', faceAnalysisService)
+
 	.controller('homeController', homeController)
+  .controller('analysisController', analysisController)
+
 	.config( $routeProvider => {
     $routeProvider
         .when('/', {
@@ -14,8 +19,8 @@ angular.module('vizagoApp', [ angularRoute ])
           controller: 'homeController'
         })
         .when('/analysePhoto', {
-          templateUrl: '/templates/analysePhoto.html'
-          
+          templateUrl: '/templates/analysePhoto.html',
+          controller: 'analysisController'
         })
         .when('/comparePhoto', {
           templateUrl: '/templates/comparePhoto.html'

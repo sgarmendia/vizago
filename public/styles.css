@@ -53,11 +53,6 @@ header .top .top-menu .form-group .form-control {
   height: 30px; }
 
 /** {border: solid red 1px;}*/
-body {
-  background: url("/img/tron__grid.jpg") no-repeat;
-  background-size: cover;
-  background-height: 100vh; }
-
 .bg {
   background: url("/img/bck.jpg") no-repeat center center;
   background-size: 100%;
@@ -97,3 +92,12 @@ body {
       width: 94%; }
     .vizagoOptions .thumbnail .imgL {
       width: 100%; }
+
+.imageInfo .image img {
+  max-width: 100%;
+  max-height: 100%; }
+
+body {
+  background: url("/img/tron__grid.jpg") no-repeat;
+  background-size: cover;
+  background-height: 100vh; }

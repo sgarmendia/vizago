@@ -1,33 +1,32 @@
-<div class="appTitle">
-    <h1><a href="#!/">vizago</a></h1>
-</div>
 <div class="container">
+    <div class="appTitle">
+        <h1><a href="#!/">vizago</a></h1>
+    </div>
     <div class="row">
         <br/>
         <br/>
-        <form id="togglingForm" method="POST" action="/analyse" class="form-horizontal">
+        <form id="togglingForm" ng-submit="analyseUrl()" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-9 searchDiv">
-                    <input type="text" class="form-control" name="source" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
-                    <br />
+                    <input autofocus ng-model="source" type="text" class="col-xs-10 form-control" name="source" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
                 </div>
                 <div class="col-xs-2">
-                    <button type="button" method="POST" action="/analyse" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
+                    <button type="submit" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
                 </div>
             </div>
         </form>
     </div>
-</div>
-<div class="imageInfo">
-    <div class="image">
-        <img src="http://aroundmovies.com/wp-content/uploads/2015/10/Jennifer-Lawrence.jpg" class="photo">
-    </div>
-    <div class="info">
-        <ul class="infoList">
-            <li>AGE</li>
-            <li>EMOTION</li>
-            <li>GENDER</li>
-            <li>EYES</li>
-        </ul>
+    <div class="imageInfo">
+        <div class="image col-md-6">
+            <img src="{{ source }}" class="photo">
+        </div>
+        <div ng-show="faceData" class="info col-md-3">
+            <ul class="infoList">
+                <li>Estimated age: {{ faceData.age_est.value }}</li>
+                <li>The gender is: {{ faceData.gender.value }}</li>
+                <li>Wearing glasses: {{ faceData.glasses.value }}</li>
+                <li>Mood: {{ faceData.mood.value }}</li>
+            </ul>
+        </div>
     </div>
 </div>

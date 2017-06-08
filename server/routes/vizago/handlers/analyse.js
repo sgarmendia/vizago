@@ -12,10 +12,7 @@ function analyse (req, res) {
   var tokenRequest = {
       method: 'POST',
       url: 'https://api-us.faceplusplus.com/facepp/v3/detect?api_key=sMTsq5eWZY-zpF0-yCr5XACBtClsfOvg&api_secret=Br-Og55C1c4lSuuxKDOAqcS9bpLF1SHg&image_url=' + source,
-      headers: {
-        //'app_id': '16b0caaf',
-        //'app_key': '51b073adf8709fa55caed715ee4adfd8'
-      },
+      headers: {},
       json: true 
   }
 
@@ -38,12 +35,12 @@ function analyse (req, res) {
                   att = bioData.faces[0].attributes
 
                   if (att.smile.value > att.smile.threshold) {
-                    smile = 'yes'
+                    bioData.smile = 'yes'
                   } else {
-                    smile = 'no'
+                    bioData.smile = 'no'
                   }
 
-                  conf = Math.floor( (att.facequality.value / att.facequality.threshold ) * 100) / 100
+                  bioData.conf = Math.floor( (att.facequality.value / att.facequality.threshold ) * 100) / 100
 
                   let bb, mb, gb
 
@@ -51,9 +48,9 @@ function analyse (req, res) {
                   mb = att.blur.motionblur.value / att.blur.motionblur.threshold
                   gb = att.blur.gaussianblur.value / att.blur.gaussianblur.threshold
 
-                  blurIndex = Math.round(( ( bb + mb + gb) / 3 ) * 10000) /100
+                  bioData.blurIndex = Math.round(( ( bb + mb + gb ) / 3 ) * 10000) /100
 
-                  res.render('index.pug' , { att , source ,smile, conf, blurIndex })
+                  res.json(bioData)
 
           })
 
