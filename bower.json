@@ -16,7 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "angularjs-gauge": "^2.0.1"
+    "bootstrap": "^3.3.7"
   }
 }

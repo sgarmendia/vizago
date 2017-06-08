@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angularjs-gauge": "^2.0.1",
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
@@ -27,6 +26,7 @@
   "devDependencies": {
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",
+    "angularjs-gauge": "^2.0.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "node-sass": "^4.5.3",
