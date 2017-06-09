@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install",
     "build:js": "browserify src/js/app.js > public/app.js",
     "build:js:watch": "watchify -t babelify src/js/app.js -d -o public/app.js -v",
     "build:scss": "node-sass src/scss/styles.scss public/styles.css",
