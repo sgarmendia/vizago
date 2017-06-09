@@ -97,11 +97,33 @@ header .top .top-menu .form-group .form-control {
   max-width: 100%;
   max-height: 100%; }
 
+.appTitle h1 {
+  margin-left: 5%; }
+  .appTitle h1 a {
+    font-family: 'Baloo Bhaina', cursive;
+    color: black;
+    font-size: 150%;
+    text-decoration: none; }
+
+.compare .form-group .searchDiv1 {
+  margin-bottom: 1%; }
+
+.compare .form-group .searchDiv2 {
+  margin-top: 1%;
+  margin-bottom: 1%; }
+
+.compare .form-group .compareButton {
+  margin-top: 1%;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 50%; }
+
 .compareInfo {
   /* display: flex;
     justify-content: space-between;*/ }
   .compareInfo img {
     width: 100%; }
+  .compareInfo .match ng-gauge {
+    position: center center; }
 
 /*
 body {

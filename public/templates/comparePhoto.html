@@ -4,14 +4,14 @@
 <div class="container compare">
     <form id="togglingForm" ng-submit="compareUrl()" class="form-horizontal">
         <div class="form-group">
-            <div class="col-xs-9 searchDiv">
+            <div class="col-xs-9 searchDiv1">
                 <input autofocus ng-model="source1" type="text" class="col-xs-10 form-control" name="source1" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
             </div>
-            <div class="col-xs-9 searchDiv">
+            <div class="col-xs-9 searchDiv2">
                 <input ng-model="source2" type="text" class="col-xs-10 form-control" name="source2" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
             </div>
-            <div class="col-xs-9">
-                <button type="submit" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
+            <div class="col-xs-9 compareButton">
+                <button type="submit" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Compare</button>
             </div>
         </div>
     </form>
@@ -19,8 +19,8 @@
         <div class="image1 col-6 col-md-4">
             <img src="{{ source1 }}" class="photo1">
         </div>
-        <div class="gaugeMatch col-6 col-md-4">
-            <ng-gauge ng-show="compareData" size="300" min="0" max="100" type="arch" thick="15" value="compareData.confidence" cap="round" label="Confidence" append="%"></ng-gauge>
+        <div class="match col-6 col-md-4">
+            <ng-gauge ng-show="compareData" size="300" min="0" max="100" type="arch" thick="15" value="compareData.confidence" cap="round" label="{{match}}" append="%"></ng-gauge>
         </div>
         <div class="image2 col-6 col-md-4">
             <img src="{{ source2 }}" class="photo2">

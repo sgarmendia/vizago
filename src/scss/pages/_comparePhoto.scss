@@ -1,4 +1,36 @@
+.appTitle {
+    h1 {
+        margin-left: 5%;
 
+        a {
+            font-family: 'Baloo Bhaina', cursive;
+            color: black;
+            font-size: 150%;
+            text-decoration: none;
+        }
+    }
+}
+
+.compare {
+
+    .form-group {
+
+        .searchDiv1 {
+            margin-bottom: 1%;
+        }
+
+        .searchDiv2 {
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+    
+        .compareButton {
+            margin-top: 1%;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 50%;
+        }
+    }
+}
 
 .compareInfo {
 
@@ -7,6 +39,14 @@
 
     img {
         width: 100%; 
+    }
+
+    .match {
+        
+
+        ng-gauge {
+            position: center center ;
+        }
     }
 }
 

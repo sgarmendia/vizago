@@ -8,6 +8,13 @@ function compareController($scope, faceAnalysisService) {
             .then( compareData => {
                 $scope.compareData = compareData
                 console.log($scope.compareData)
+
+                const conf = compareData.confidence
+                const threshold = compareData.thresholds['1e-5']
+
+                const match = conf > threshold ? 'Match' : 'No Match'
+
+                $scope.match = match
         })  
     }
 }
