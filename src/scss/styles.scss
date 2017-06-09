@@ -11,3 +11,26 @@ body {
 }
 */
 
+body {
+background: rgb(78,148,199); /* Old browsers */
+background: -moz-linear-gradient(top, rgb(78,148,199) 0%, rgb(221,241,249) 65%, rgb(254,255,255) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgb(78,148,199) 0%,rgb(221,241,249) 65%,rgb(254,255,255) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgb(78,148,199) 0%,rgb(221,241,249) 65%,rgb(254,255,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background-repeat: no-repeat;
+background-width: 100vh;
+background-height: 100vh;
+
+}
+
+.appTitle {
+    h1 {
+        margin-left: 5%;
+
+        a {
+            font-family: 'Baloo Bhaina', cursive;
+            color: black;
+            font-size: 150%;
+            text-decoration: none;
+        }
+    }
+}

@@ -68,14 +68,14 @@ header .top .top-menu .form-group .form-control {
   margin-bottom: 0px;
   height: 400px;
   background: transparent; }
-  .jumbotron h1 {
+  .jumbotron h1 a {
+    text-decoration: none;
     font-family: 'Baloo Bhaina', cursive;
     color: black;
-    font-size: 8em;
-    text-decoration: none; }
+    font-size: 150%; }
   .jumbotron p {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 2em; }
+    font-size: 190%; }
 
 .vizagoOptions {
   margin-top: 20px; }
@@ -93,17 +93,13 @@ header .top .top-menu .form-group .form-control {
     .vizagoOptions .thumbnail .imgL {
       width: 100%; }
 
+/*@vizagoBlue = rgb(160,207,234);*/
+#togglingForm > div {
+  margin-left: 20px; }
+
 .imageInfo .image img {
   max-width: 100%;
   max-height: 100%; }
-
-.appTitle h1 {
-  margin-left: 5%; }
-  .appTitle h1 a {
-    font-family: 'Baloo Bhaina', cursive;
-    color: black;
-    font-size: 150%;
-    text-decoration: none; }
 
 .compare .form-group .searchDiv1 {
   margin-bottom: 1%; }
@@ -117,13 +113,8 @@ header .top .top-menu .form-group .form-control {
   font-family: 'Share Tech Mono', monospace;
   font-size: 50%; }
 
-.compareInfo {
-  /* display: flex;
-    justify-content: space-between;*/ }
-  .compareInfo img {
-    width: 100%; }
-  .compareInfo .match ng-gauge {
-    position: center center; }
+.compareInfo img {
+  width: 100%; }
 
 /*
 body {
@@ -132,3 +123,23 @@ body {
     background-height: 100vh;
 }
 */
+body {
+  background: #4e94c7;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #4e94c7 0%, #ddf1f9 65%, #feffff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #4e94c7 0%, #ddf1f9 65%, #feffff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #4e94c7 0%, #ddf1f9 65%, #feffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-repeat: no-repeat;
+  background-width: 100vh;
+  background-height: 100vh; }
+
+.appTitle h1 {
+  margin-left: 5%; }
+  .appTitle h1 a {
+    font-family: 'Baloo Bhaina', cursive;
+    color: black;
+    font-size: 150%;
+    text-decoration: none; }

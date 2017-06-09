@@ -1,15 +1,4 @@
-.appTitle {
-    h1 {
-        margin-left: 5%;
 
-        a {
-            font-family: 'Baloo Bhaina', cursive;
-            color: black;
-            font-size: 150%;
-            text-decoration: none;
-        }
-    }
-}
 
 .compare {
 
@@ -34,20 +23,10 @@
 
 .compareInfo {
 
-   /* display: flex;
-    justify-content: space-between;*/
-
     img {
         width: 100%; 
     }
 
-    .match {
-        
-
-        ng-gauge {
-            position: center center ;
-        }
-    }
 }
 
 
