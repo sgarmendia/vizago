@@ -12,18 +12,19 @@ function compareByIdController($scope, $routeParams, $http, vizagoService) {
 
           const { source1, source2 } = $scope
 
-        vizagoService.compareFace( { source1, source2 } )
-              .then( compareData => {
-                  $scope.compareData = compareData
-                  console.log($scope.compareData)
+          vizagoService.compareFace( { source1, source2 } )
+            .then( compareData => {
+              $scope.compareData = compareData
+              console.log($scope.compareData)
 
-                  const conf = compareData.confidence
-                  const threshold = compareData.thresholds['1e-5']
+              const conf = compareData.confidence
+              const threshold = compareData.thresholds['1e-5']
 
-                  const match = conf > threshold ? 'Match' : 'No Match'
+              const match = conf > threshold ? 'Match' : 'No Match'
 
-                  $scope.match = match
-          })
+              $scope.match = match
+              
+            })
 
         })  
 
