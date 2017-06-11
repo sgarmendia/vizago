@@ -3,15 +3,17 @@ const router = express.Router()
 
 // DEFINE HANDLER FOR REQUESTING PHOTO ANALYSIS
 const analyse = require('./handlers/analyse')
-const analysewc = require('./handlers/analysewc')
+const storeanalysis = require('./handlers/storeanalysis')
 const compare = require('./handlers/compare')
 const analysesb = require('./handlers/analysesb')
+const compareById = require('./handlers/compareById')
 
 
 router.post('/analyse', analyse)
-router.post('/analysewc', analysewc)
+router.post('/storeanalysis', storeanalysis)
 router.post('/compare', compare)
 router.post('/analysesb', analysesb)
+router.get('/comparePhoto/:id', compareById)
 
 
 module.exports = router

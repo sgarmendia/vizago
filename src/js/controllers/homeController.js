@@ -1,4 +1,4 @@
-function homeController($scope, faceAnalysisService) {
+function homeController($scope, vizagoService) {
       
 
 

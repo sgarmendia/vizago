@@ -1,10 +1,10 @@
-function analysisController($scope, faceAnalysisService) {
+function analysisController($scope, vizagoService) {
       
     $scope.analyseUrl = () => {
 
         const { source } = $scope
         
-        faceAnalysisService.faceAnalysis( { source } )
+        vizagoService.faceAnalysis( { source } )
             .then( faceData => {
                 $scope.faceData = faceData
                 console.log($scope.faceData)

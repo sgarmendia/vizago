@@ -1,10 +1,13 @@
-function compareController($scope, faceAnalysisService) {
+function compareController($scope, vizagoService) {
       
     $scope.compareUrl = () => {
 
         const { source1, source2 } = $scope
+        const type = 'compare'
+        const timeStamp = new Date().valueOf()
+        const address = `/comparePhoto/${timeStamp}`
         
-        faceAnalysisService.compareFace( { source1, source2 } )
+        vizagoService.compareFace( { source1, source2 } )
             .then( compareData => {
                 $scope.compareData = compareData
                 console.log($scope.compareData)
@@ -16,6 +19,10 @@ function compareController($scope, faceAnalysisService) {
 
                 $scope.match = match
         })  
+
+        vizagoService.storeAnalysis( { type, source1, source2, address, timeStamp } )
+            .then( console.log )
+
     }
 }
 

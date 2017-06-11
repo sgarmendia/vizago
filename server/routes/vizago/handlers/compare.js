@@ -18,7 +18,9 @@ function compare (req, res) {
 
       })
       .catch(function (err) {
+
           res.end('Error on request')
+
       })
 }
 

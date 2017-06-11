@@ -58,15 +58,16 @@ header .top .top-menu .form-group .form-control {
   background-size: 100%;
   position: static;
   width: 100%;
-  height: 400px;
+  height: 600px;
   /*same height as jumbotron */
   top: 0;
   left: 0;
   z-index: -1; }
 
 .jumbotron {
+  margin-top: 0px;
   margin-bottom: 0px;
-  height: 400px;
+  height: 600px;
   background: transparent; }
   .jumbotron h1 a {
     text-decoration: none;

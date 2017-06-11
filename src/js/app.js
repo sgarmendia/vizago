@@ -2,14 +2,15 @@ const angular = require('angular')
 const angularRoute = require('angular-route')
 require('angularjs-gauge')
 
+
 const homeController = require('./controllers/homeController')
 const analysisController = require('./controllers/analysisController')
 const compareController = require('./controllers/compareController')
-const faceAnalysisService = require('./services/faceAnalysisService')
+const vizagoService = require('./services/vizagoService')
 
 angular.module('vizagoApp', [ 'angularjs-gauge' , angularRoute ])
 
-	.factory('faceAnalysisService', faceAnalysisService)
+	.factory('vizagoService', vizagoService)
 
 	.controller('homeController', homeController)
   .controller('analysisController', analysisController)
