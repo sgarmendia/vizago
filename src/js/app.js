@@ -6,6 +6,7 @@ require('angularjs-gauge')
 const homeController = require('./controllers/homeController')
 const analysisController = require('./controllers/analysisController')
 const compareController = require('./controllers/compareController')
+const compareByIdController = require('./controllers/compareByIdController')
 const vizagoService = require('./services/vizagoService')
 
 angular.module('vizagoApp', [ 'angularjs-gauge' , angularRoute ])
@@ -15,6 +16,7 @@ angular.module('vizagoApp', [ 'angularjs-gauge' , angularRoute ])
 	.controller('homeController', homeController)
   .controller('analysisController', analysisController)
   .controller('compareController', compareController)
+  .controller('compareByIdController', compareByIdController)
 
 	.config( $routeProvider => {
     $routeProvider
@@ -29,6 +31,10 @@ angular.module('vizagoApp', [ 'angularjs-gauge' , angularRoute ])
         .when('/comparePhoto', {
           templateUrl: '/templates/comparePhoto.html',
           controller: 'compareController'
+        })
+        .when('/comparePhoto/:id', {
+          templateUrl: '/templates/comparePhoto.html',
+          controller: 'compareByIdController'
         })
         .when('/login', {
           templateUrl: '/templates/login.html'
