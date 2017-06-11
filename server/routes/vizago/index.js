@@ -13,7 +13,7 @@ router.post('/analyse', analyse)
 router.post('/storeanalysis', storeanalysis)
 router.post('/compare', compare)
 router.post('/analysesb', analysesb)
-// router.get('/comparePhoto/:id', compareById)
+router.get('/comparePhoto/:id', compareById)
 
 
 module.exports = router

@@ -1,19 +1,20 @@
 const vizago = require('../../../models/vizago')
 
 function compareById(req,res) {
- console.log('test')
-  // const { ts } = req.params
-  // console.log('req params: ' + req.params)
-  // console.log('this is ts: '+ ts)
+ 
+  const { id } = req.params
 
-  // vizago.find( {timeStamp : ts} )
-  //   .then( msg => {
-  //     console.log(msg)
-  //     res.json(msg)
-  //   })
-  //   .catch( err => {
-  //     res.json(err)
-  //   })
+  vizago.find( {timeStamp : id} )
+    .then( msg => {
+
+      res.json(msg)
+
+    })
+    .catch( err => {
+
+      res.json(err)
+      
+    })
 
 }
 
