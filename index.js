@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.Promise = Promise
+
 
 require('dotenv').load()
 
@@ -15,9 +15,10 @@ if (process.env.NODE_ENV !== 'production') {
 const DB_URI = process.env.DB_URI
 const PORT = process.env.PORT || 3000
 
+mongoose.Promise = Promise
 mongoose.connect(DB_URI)
 
-db.open(DB_URI)
+// db.open(DB_URI)
 app.listen(PORT)
 
 console.log(`Listening on port ${PORT}...`)
