@@ -1,6 +1,8 @@
 const angular = require('angular')
 const angularRoute = require('angular-route')
+require('angular-socialshare')
 require('angularjs-gauge')
+
 
 
 const homeController = require('./controllers/homeController')
@@ -9,7 +11,7 @@ const compareController = require('./controllers/compareController')
 const compareByIdController = require('./controllers/compareByIdController')
 const vizagoService = require('./services/vizagoService')
 
-angular.module('vizagoApp', [ 'angularjs-gauge' , angularRoute ])
+angular.module('vizagoApp', [ 'angularjs-gauge', '720kb.socialshare', angularRoute ])
 
 	.factory('vizagoService', vizagoService)
 

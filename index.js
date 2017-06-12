@@ -18,7 +18,6 @@ const PORT = process.env.PORT || 3000
 mongoose.Promise = Promise
 mongoose.connect(DB_URI)
 
-// db.open(DB_URI)
 app.listen(PORT)
 
 console.log(`Listening on port ${PORT}...`)

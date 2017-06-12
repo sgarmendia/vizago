@@ -30,6 +30,7 @@
   "devDependencies": {
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",
+    "angular-socialshare": "^2.3.8",
     "angularjs-gauge": "^2.0.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",

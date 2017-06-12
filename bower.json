@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "angular-socialshare": "angularjs-socialshare#^2.3.8"
   }
 }
