@@ -1,17 +1,17 @@
 const angular = require('angular')
 const angularRoute = require('angular-route')
+require('ng-file-upload')
 require('angular-socialshare')
 require('angularjs-gauge')
-
-
 
 const homeController = require('./controllers/homeController')
 const analysisController = require('./controllers/analysisController')
 const compareController = require('./controllers/compareController')
 const compareByIdController = require('./controllers/compareByIdController')
+const loginController = require('./controllers/loginController')
 const vizagoService = require('./services/vizagoService')
 
-angular.module('vizagoApp', [ 'angularjs-gauge', '720kb.socialshare', angularRoute ])
+angular.module('vizagoApp', [ 'angularjs-gauge', '720kb.socialshare', 'ngFileUpload', angularRoute ])
 
 	.factory('vizagoService', vizagoService)
 
@@ -19,6 +19,7 @@ angular.module('vizagoApp', [ 'angularjs-gauge', '720kb.socialshare', angularRou
   .controller('analysisController', analysisController)
   .controller('compareController', compareController)
   .controller('compareByIdController', compareByIdController)
+  .controller('loginController', loginController)
 
 	.config( $routeProvider => {
     $routeProvider
@@ -39,6 +40,7 @@ angular.module('vizagoApp', [ 'angularjs-gauge', '720kb.socialshare', angularRou
           controller: 'compareByIdController'
         })
         .when('/login', {
-          templateUrl: '/templates/login.html'
+          templateUrl: '/templates/login.html',
+          controller: 'loginController'
         })
   })

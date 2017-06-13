@@ -25,6 +25,12 @@ function compareController($scope, vizagoService) {
             .then( console.log )
 
     }
+    
+    $scope.submit = function() {
+      if ($scope.form.file.$valid && $scope.file) {
+        $scope.upload($scope.file);
+      }
+    };
 }
 
 module.exports = compareController

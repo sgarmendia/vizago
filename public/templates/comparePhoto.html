@@ -12,11 +12,10 @@
             </div>
             <div class="col-xs-9 compareButton">
                 <button type="submit" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Compare</button>
-                <a class="btn" ng-show="compareData" socialshare socialshare-provider="twitter" socialshare-text="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="vizago, skylabrocks" socialshare-url="{{address}}"><img src="/img/tweet.png" alt=""></a>
-                <a class="btn" ng-show="compareData" socialshare socialshare-provider="facebook" socialshare-description="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="#vizago, #skylabrocks" socialshare-url="{{address}}"><img src="/img/facebook.png" alt=""></a>
+                <a ng-show="compareData" socialshare socialshare-provider="twitter" socialshare-text="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="vizago, skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/tweet.png" alt=""></a>
+                <a ng-show="compareData" socialshare socialshare-provider="facebook" socialshare-description="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="#vizago, #skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/facebook.png" alt=""></a>
             </div>
             <div class="social">
-                
             </div>
         </div>
     </form>
