@@ -113,6 +113,9 @@ header .top .top-menu .form-group .form-control {
   margin-top: 1%;
   font-family: 'Share Tech Mono', monospace;
   font-size: 50%; }
+  .compare .form-group .compareButton a > img {
+    height: 45px;
+    margin-left: -6px; }
 
 .compareInfo img {
   width: 100%; }

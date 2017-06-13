@@ -6,6 +6,7 @@ function compareController($scope, vizagoService) {
         const type = 'compare'
         const timeStamp = new Date().valueOf()
         const address = `/comparePhoto/${timeStamp}`
+        $scope.address = `https://vizago.herokuapp.com/#!/comparePhoto/${timeStamp}`
         
         vizagoService.compareFace( { source1, source2 } )
             .then( compareData => {
