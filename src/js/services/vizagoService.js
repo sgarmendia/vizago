@@ -18,10 +18,17 @@ function vizagoService ($http) {
       .then( response => response.data )
   }
 
+  function loginFace(data) {
+
+    return $http.post('/searchFace', data )
+      .then( response => response.data )
+  }
+
 
   return { faceAnalysis, 
            compareFace, 
-           storeAnalysis }
+           storeAnalysis,
+           loginFace }
 
 }
 

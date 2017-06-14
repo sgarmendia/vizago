@@ -14,19 +14,12 @@ const app = express()
 // DEFINING ROUTES IN ROUTES FILE
 const routerVizago = require('./routes/vizago')
 
-// DEFINE VERIFY MIDDLEWARE
-// const verifyVizago = require('./routes/middlewares/verifyvizago')
-
 // DEFINING 'PUBLIC' FOLDER FOR STATIC DOCS
 app.use(express.static(path.join(__dirname, '../public')))
-
-// INVOKE VERIFY MIDDLEWARE
-// app.use(verifyVizago)
 
 // MIDDLEWARES FOR POST METHOD AND JSON HANDLING
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
 
 app.post('/upload', upload.single('file'), uploadCloudinary, (req, res) => {
   const { imageLink } = req

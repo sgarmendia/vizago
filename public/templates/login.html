@@ -2,37 +2,51 @@
     <h1><a href="#!/">vizago</a></h1>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading"><strong>Upload files</strong> <small> </small></div>
-        <div class="panel-body">
-          <div class="input-group image-preview">
-            <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
-            <!-- don't give a name === doesn't send on POST/GET -->
-            <span class="input-group-btn">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Upload files</strong> <small> </small></div>
+                <div class="panel-body">
+                    <div class="input-group image-preview">
+                        <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                        <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
               <!-- image-preview-clear button -->
               <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
               <span class="glyphicon glyphicon-remove"></span> Clear </button>
-              <!-- image-preview-input -->
-              <div class="btn btn-default image-preview-input">
-                <span class="glyphicon glyphicon-folder-open"></span>
-                <span class="image-preview-input-title">Browse</span>
-                <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
-                <!-- rename it -->
-              </div>
-              <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
-              <span class="btn-label">
+                        <!-- image-preview-input -->
+                        <div class="btn btn-default image-preview-input">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="image-preview-input-title">Browse</span>
+                            <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                            <!-- rename it -->
+                        </div>
+                        <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                            <span class="btn-label">
                 <i class="glyphicon glyphicon-upload"></i>
               </span>Upload</button>
-            </span>
-          </div>
-          <!-- /input-group image-preview [TO HERE]-->
+                        </span>
+                    </div>
+                    <!-- /input-group image-preview [TO HERE]-->
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col-md-6">
+            <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
+        </div>
     </div>
-    <div class="col-md-6">
-      <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
+    <div class="row">
+        <ul ng-show="conf > threshold">
+            <li ng-repeat="result in results" class="clearedUsers">
+                <p class="user"><i class="glyphicon glyphicon-ok"></i> Welcome {{ result.user_id }}</p>
+            </li>
+        </ul>
+        <ul ng-show="conf < threshold">
+            <li ng-repeat="result in results" class="clearedUsers">
+                <p class="user"><i class="glyphicon glyphicon-remove"></i> Sorry, you are not recognized !</p>
+            </li>
+        </ul>
     </div>
-  </div>
+    <p ng-hide="results">Lower threshold: <input  type="checkbox" ng-model="checked" ng-init="checked=false" /></p><br/>
+    <p>{{ threshold }}</p>
 </div>
