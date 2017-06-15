@@ -3,19 +3,39 @@
 </div>
 <div class="container">
     <div class="row">
-        <form id="togglingForm" ng-submit="analyseUrl()" class="form-horizontal">
-            <div class="form-group">
-                <div class="col-xs-9 searchDiv">
-                    <input autofocus ng-model="source" type="text" class="col-xs-10 form-control" name="source" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Upload photo for analysis</strong> <small> </small></div>
+                <div class="panel-body">
+                    <div class="input-group image-preview">
+                        <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                        <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                        <!-- image-preview-input -->
+                        <div class="btn btn-default image-preview-input">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="image-preview-input-title">Browse</span>
+                            <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                            <!-- rename it -->
+                        </div>
+                        <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                            <span class="btn-label">
+                <i class="glyphicon glyphicon-upload"></i>
+              </span>Upload</button>
+                        </span>
+                    </div>
+                    <!-- /input-group image-preview [TO HERE]-->
                 </div>
-                <button type="submit" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Analyse</button>
             </div>
-        </form>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
+        </div>
     </div>
     <div class="imageInfo">
-        <div class="image col-md-6">
-            <img src="{{ source }}" class="photo">
-        </div>
         <div ng-show="faceData" class="info col-md-6">
             <!-- <ul class="infoList"> -->
             <ng-gauge size="150" type="arch" thick="15" value="faceData.age_est.value" cap="round" label="Age" append="years"></ng-gauge>

@@ -1,15 +1,34 @@
-function analysisController($scope, vizagoService) {
-      
-    $scope.analyseUrl = () => {
+function analysisController($scope, Upload, vizagoService) {
 
-        const { source } = $scope
-        
-        vizagoService.faceAnalysis( { source } )
-            .then( faceData => {
-                $scope.faceData = faceData
-                console.log($scope.faceData)
-        })  
-    }
+    (function() {
+
+        $scope.fileSelected = (files) => {
+            if (files && files.length) {
+                $scope.file = files[0];
+            }
+        }
+
+        $scope.uploadFile = function() {
+            const url = '/upload' //node.js route
+            const file = $scope.file
+            Upload.upload({ url, file })
+                .success(({ imageLink }) => {
+                    $scope.imageLink = imageLink
+                    console.log(imageLink)
+
+                    const source = imageLink
+
+                    vizagoService.faceAnalysis({ source })
+                        .then(faceData => {
+                            $scope.faceData = faceData
+                            console.log($scope.faceData)
+                        })
+
+                })
+        }
+
+    })()
+
 }
 
 module.exports = analysisController
