@@ -59,11 +59,9 @@
 .compare .form-group .compareButton {
   margin-top: 1%;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 50%;
-  /*            a > img {
-              height: 45px;
-              margin-left: -6px;
-            }*/ }
+  font-size: 50%; }
+  .compare .form-group .compareButton a > img {
+    height: 60px; }
 
 .compareInfo img {
   width: 100%; }
