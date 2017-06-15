@@ -16,14 +16,16 @@ function searchFace (req, res) {
   rp(searchRequest)
         .then(function (searchData) {
           
-          // res.json(searchData)
-
           const token = searchData.results[0].face_token
+          const conf = searchData.results[0].confidence
+          const thr = searchData.thresholds['1e-5']
+
+          if (conf > thr) {
 
            vizagoUser.find( { token } )
               .then( msg => {
 
-                res.json(msg)
+                res.json( { msg , conf , thr } )
 
               })
               .catch( err => {
@@ -32,6 +34,12 @@ function searchFace (req, res) {
                 
               })
 
+          } else {
+
+          res.send('false')
+
+          }
+          
         })
         .catch(function (err) {
 

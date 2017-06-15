@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Upload files</strong> <small> </small></div>
+                <div class="panel-heading"><strong>Login</strong> <small> </small></div>
                 <div class="panel-body">
                     <div class="input-group image-preview">
                         <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
@@ -29,35 +29,19 @@
                     </div>
                     <!-- /input-group image-preview [TO HERE]-->
                 </div>
+                 <div ng-if="data.auth === true">
+                    <h3 class="user panel-body"><i style="color: green;" class="glyphicon glyphicon-ok"></i> Welcome {{ data.name }} - you are authorized</h3>
+                 </div>
+                 <div ng-if="data.auth === false">
+                    <h3 class="user panel-body"><i style="color: red;" class="glyphicon glyphicon-ok"></i> Sorry {{ data.name }} - you are NOT authorized</h3>
+                 </div>
+                 <div ng-if="data.auth === 'unregistered'">
+                    <h3 class="user panel-body"><i style="color: red;" class="glyphicon glyphicon-remove"></i> Sorry, you are NOT registered!</h3>
+                 </div>
             </div>
-
-            <div ng-show="auth === true">
-            <li ng-repeat="result in results" class="clearedUsers">
-                <p class="user"><i class="glyphicon glyphicon-ok"></i> Welcome {{ result.user_id }}</p>
-            </li>
-        </ul>
-            <h2>Welcome {{</h2>
-
-
-
-
         </div>
         <div class="col-md-6">
             <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
         </div>
     </div>
-    <!-- <div class="row">
-        <ul ng-show="conf > threshold">
-            <li ng-repeat="result in results" class="clearedUsers">
-                <p class="user"><i class="glyphicon glyphicon-ok"></i> Welcome {{ result.user_id }}</p>
-            </li>
-        </ul>
-        <ul ng-show="conf < threshold">
-            <li ng-repeat="result in results" class="clearedUsers">
-                <p class="user"><i class="glyphicon glyphicon-remove"></i> Sorry, you are not recognized !</p>
-            </li>
-        </ul>
-    </div> -->
-    <!-- <p ng-hide="results">Lower threshold: <input  type="checkbox" ng-model="checked" ng-init="checked=false" /></p><br/>
-    <p>{{ threshold }}</p> -->
 </div>
