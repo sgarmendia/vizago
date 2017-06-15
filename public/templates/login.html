@@ -30,12 +30,23 @@
                     <!-- /input-group image-preview [TO HERE]-->
                 </div>
             </div>
+
+            <div ng-show="auth === true">
+            <li ng-repeat="result in results" class="clearedUsers">
+                <p class="user"><i class="glyphicon glyphicon-ok"></i> Welcome {{ result.user_id }}</p>
+            </li>
+        </ul>
+            <h2>Welcome {{</h2>
+
+
+
+
         </div>
         <div class="col-md-6">
             <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <ul ng-show="conf > threshold">
             <li ng-repeat="result in results" class="clearedUsers">
                 <p class="user"><i class="glyphicon glyphicon-ok"></i> Welcome {{ result.user_id }}</p>
@@ -46,7 +57,7 @@
                 <p class="user"><i class="glyphicon glyphicon-remove"></i> Sorry, you are not recognized !</p>
             </li>
         </ul>
-    </div>
-    <p ng-hide="results">Lower threshold: <input  type="checkbox" ng-model="checked" ng-init="checked=false" /></p><br/>
-    <p>{{ threshold }}</p>
+    </div> -->
+    <!-- <p ng-hide="results">Lower threshold: <input  type="checkbox" ng-model="checked" ng-init="checked=false" /></p><br/>
+    <p>{{ threshold }}</p> -->
 </div>

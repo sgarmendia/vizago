@@ -55,13 +55,13 @@
                     <!-- /input-group image-preview [TO HERE]-->
                 </div>
             </div>
-            <button type="button" class="btn btn-default image-preview-clear" ng-click="compareUrl()">
-              <span class="glyphicon glyphicon-eye-open"></span> Compare </button>
-            <a ng-show="compareData" socialshare socialshare-provider="twitter" socialshare-text="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="vizago, skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/tweet.png" alt="" style="height: 60px;"></a>
+            <button type="button" class="btn btn-default image-preview-clear" ng-show="imageLink1 && imageLink2" ng-click="compareUrl()">
+              <span class="glyphicon glyphicon-eye-open"></span> Compare </button><br/>
+            <a ng-show="compareData" socialshare socialshare-provider="twitter" socialshare-text="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="vizago, skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/tweet.png" alt="" style="height: 60px;"></a><br/>
     <!-- <a ng-show="compareData" socialshare socialshare-provider="facebook" socialshare-description="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="#vizago, #skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/facebook.png" alt=""></a> -->
         </div>
         <br/>
-
+        <div class="row">
         <div class="col-md-4">
             <img class="img-responsive" ng-src="{{ imageLink1 }}" alt="">
         </div>
@@ -70,6 +70,7 @@
         </div>
         <div class="col-md-4">
             <img class="img-responsive" ng-src="{{ imageLink2 }}" alt="">
+        </div>
         </div>
 
     </div>

@@ -61,7 +61,9 @@
   font-family: 'Share Tech Mono', monospace;
   font-size: 50%; }
   .compare .form-group .compareButton a > img {
-    height: 60px; }
+    height: 60px;
+    padding: 0;
+    margin-left: -10px; }
 
 .compareInfo img {
   width: 100%; }

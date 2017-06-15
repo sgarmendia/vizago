@@ -21,11 +21,11 @@ function loginController($scope, Upload, vizagoService) {
         vizagoService.loginFace( { source } )
             .then( searchData => {
 
-                $scope.results = searchData.results
+                $scope.data = searchData
 
-                $scope.conf = searchData.results[0].confidence
+                // $scope.conf = searchData.results[0].confidence
 
-                $scope.threshold = $scope.checked ? searchData.thresholds['1e-4'] : searchData.thresholds['1e-5']
+                // $scope.threshold = $scope.checked ? searchData.thresholds['1e-4'] : searchData.thresholds['1e-5']
 
                 console.log(searchData)
             })

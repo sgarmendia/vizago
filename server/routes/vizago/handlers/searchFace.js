@@ -1,3 +1,4 @@
+const vizagoUser = require('../../../models/vizagoUser')
 var rp = require('request-promise')
 
 function searchFace (req, res) {
@@ -15,7 +16,21 @@ function searchFace (req, res) {
   rp(searchRequest)
         .then(function (searchData) {
           
-          res.json(searchData)
+          // res.json(searchData)
+
+          const token = searchData.results[0].face_token
+
+           vizagoUser.find( { token } )
+              .then( msg => {
+
+                res.json(msg)
+
+              })
+              .catch( err => {
+
+                res.json(err)
+                
+              })
 
         })
         .catch(function (err) {
