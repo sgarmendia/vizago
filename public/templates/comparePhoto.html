@@ -1,33 +1,92 @@
+<div class="container compare">
 <div class="appTitle">
     <h1><a href="#!/">vizago</a></h1>
 </div>
-<div class="container compare">
-    <form id="togglingForm" ng-submit="compareUrl()" class="form-horizontal">
-        <div class="form-group">
-            <div class="col-xs-9 searchDiv1">
-                <input autofocus ng-model="source1" type="text" class="col-xs-10 form-control" name="source1" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Upload Image 1</strong> <small> </small></div>
+                <div class="panel-body">
+                    <div class="input-group image-preview">
+                        <input ng-model="file1.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                        <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                        <!-- image-preview-input -->
+                        <div class="btn btn-default image-preview-input">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="image-preview-input-title">Browse</span>
+                            <input ngf-select="fileSelected1($files)" type="file" accept="'image/*'" name="file1" />
+                            <!-- rename it -->
+                        </div>
+                        <button ng-click="uploadFile1()" type="button" class="btn btn-labeled btn-primary">
+                            <span class="btn-label">
+                <i class="glyphicon glyphicon-upload"></i>
+              </span>Upload</button>
+                        </span>
+                    </div>
+                    <!-- /input-group image-preview [TO HERE]-->
+                </div>
             </div>
-            <div class="col-xs-9 searchDiv2">
-                <input ng-model="source2" type="text" class="col-xs-10 form-control" name="source2" required data-fv-notempty-message="url is required" placeholder="Paste your url here" />
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Upload Image 2</strong> <small> </small></div>
+                <div class="panel-body">
+                    <div class="input-group image-preview">
+                        <input ng-model="file2.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                        <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
+
+              
+                        <!-- image-preview-input -->
+                        <div class="btn btn-default image-preview-input">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="image-preview-input-title">Browse</span>
+                            <input ngf-select="fileSelected2($files)" type="file" accept="'image/*'" name="file2" />
+                            <!-- rename it -->
+                        </div>
+                        <button ng-click="uploadFile2()" type="button" class="btn btn-labeled btn-primary">
+                            <span class="btn-label">
+                <i class="glyphicon glyphicon-upload"></i>
+              </span>Upload</button>
+                        </span>
+                    </div>
+                    <!-- /input-group image-preview [TO HERE]-->
+                </div>
             </div>
-            <div class="col-xs-9 compareButton">
-                <button type="submit" class="btn btn-primary analyseButton" data-toggle="#jobInfo">Compare</button>
-                <a ng-show="compareData" socialshare socialshare-provider="twitter" socialshare-text="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="vizago, skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/tweet.png" alt=""></a>
-                <!-- <a ng-show="compareData" socialshare socialshare-provider="facebook" socialshare-description="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="#vizago, #skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/facebook.png" alt=""></a> -->
-            </div>
-            <div class="social">
-            </div>
+            <button type="button" class="btn btn-default image-preview-clear" ng-click="compareUrl()">
+              <span class="glyphicon glyphicon-eye-open"></span> Compare </button>
+            <a ng-show="compareData" socialshare socialshare-provider="twitter" socialshare-text="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="vizago, skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/tweet.png" alt="" style="height: 60px;"></a>
+    <!-- <a ng-show="compareData" socialshare socialshare-provider="facebook" socialshare-description="Chekout this face comparison with VIZAGO - the biometrics app for all..." socialshare-hashtags="#vizago, #skylabrocks" socialshare-url="{{address}}"><img class="btn" src="/img/facebook.png" alt=""></a> -->
         </div>
-    </form>
-    <div class="compareInfo row">
-        <div class="image1 col-6 col-md-4" ng-show="source1">
-            <img src="{{ source1 }}" class="photo1">
+        <br/>
+
+        <div class="col-md-4">
+            <img class="img-responsive" ng-src="{{ imageLink1 }}" alt="">
         </div>
-        <div class="match col-6 col-md-4">
-            <ng-gauge ng-show="compareData" size="300" min="0" max="100" type="arch" thick="15" value="compareData.confidence" cap="round" label="{{match}}" append="%"></ng-gauge>
+        <div class="match col-md-4">
+        <ng-gauge class="img-responsive" ng-show="compareData" size="250" min="0" max="100" type="arch" thick="15" value="compareData.confidence" cap="round" label="{{match}}" append="%"></ng-gauge>
         </div>
-        <div class="image2 col-6 col-md-4" ng-show="source2">
-            <img src="{{ source2 }}" class="photo2">
+        <div class="col-md-4">
+            <img class="img-responsive" ng-src="{{ imageLink2 }}" alt="">
         </div>
+
     </div>
+    
+
+
+
+<!-- <div class="compareInfo row">
+    <div class="image1 col-6 col-md-4" ng-show="source1">
+        <img src="{{ source1 }}" class="photo1">
+    </div>
+    <div class="match col-6 col-md-4">
+        <ng-gauge ng-show="compareData" size="300" min="0" max="100" type="arch" thick="15" value="compareData.confidence" cap="round" label="{{match}}" append="%"></ng-gauge>
+    </div>
+    <div class="image2 col-6 col-md-4" ng-show="source2">
+        <img src="{{ source2 }}" class="photo2">
+    </div>
+</div> -->
 </div>
+

@@ -1,5 +1,56 @@
-function compareController($scope, vizagoService) {
+function compareController($scope, Upload, vizagoService) {
       
+(function() {
+
+// FUNCTIONS FOR IMAGE 1
+
+    $scope.fileSelected1 = (files) => {
+      if (files && files.length) {
+        $scope.file1 = files[0];
+      }
+    }
+
+    $scope.uploadFile1 = function(){
+      const url = '/upload' //node.js route
+      const file = $scope.file1
+      Upload.upload({ url, file })
+        .success( ({imageLink}) => {
+
+            $scope.imageLink1 = imageLink 
+
+            console.log(imageLink)
+
+            $scope.source1 = imageLink
+
+        })
+    }
+
+// FUNCTIONS FOR IMAGE 2
+
+    $scope.fileSelected2 = (files) => {
+      if (files && files.length) {
+        $scope.file2 = files[0];
+      }
+    }
+
+    $scope.uploadFile2 = function(){
+      const url = '/upload' //node.js route
+      const file = $scope.file2
+      Upload.upload({ url, file })
+        .success( ({imageLink}) => {
+
+            $scope.imageLink2 = imageLink 
+
+            console.log(imageLink)
+
+            $scope.source2 = imageLink
+
+        })
+    }
+
+})()
+
+
     $scope.compareUrl = () => {
 
         const { source1, source2 } = $scope
