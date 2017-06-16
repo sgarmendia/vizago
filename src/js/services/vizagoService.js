@@ -30,12 +30,18 @@ function vizagoService ($http) {
       .then( response => response.data )
   }
 
+  function editUser(data) {
+
+    return $http.post('/edituser', data )
+      .then( response => response.data )
+  }
 
   return { faceAnalysis, 
            compareFace, 
            storeAnalysis,
            storeUser,
-           loginFace }
+           loginFace,
+           editUser }
 
 }
 
