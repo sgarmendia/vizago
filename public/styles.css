@@ -41,12 +41,6 @@
     .vizagoOptions .thumbnail .imgL {
       width: 100%; }
 
-/*
-body > ng-view > div.container.ng-scope > div.row > div:nth-child(1) > div > div:nth-child(3) > div > ul:nth-child(2) > li > div {margin-bottom: 0px;}
-
-body > ng-view > div.container.ng-scope > div.row > div:nth-child(1) > div > div:nth-child(3) > div > ul > li:nth-child(1) > h3 {margin: 0px;}
-
-*/
 .barList > li > div {
   margin-bottom: 0px; }
 
