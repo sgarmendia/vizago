@@ -7,10 +7,11 @@ function compareByIdController($scope, $routeParams, $http, vizagoService) {
         .then( response => {
           console.log(response.data[0])
 
-          $scope.source1 = response.data[0].source1
-          $scope.source2 = response.data[0].source2
+          $scope.imageLink1 = response.data[0].source1
+          $scope.imageLink2 = response.data[0].source2
 
-          const { source1, source2 } = $scope
+          const source1 = $scope.imageLink1
+          const source2 = $scope.imageLink2
 
           vizagoService.compareFace( { source1, source2 } )
             .then( compareData => {

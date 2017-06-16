@@ -9,6 +9,7 @@ const compare = require('./handlers/compare')
 const analysesb = require('./handlers/analysesb')
 const upload = require('./handlers/upload')
 const searchFace = require('./handlers/searchFace')
+const edituser = require('./handlers/edituser')
 const compareById = require('./handlers/compareById')
 
 router.post('/analyse', analyse)
@@ -18,7 +19,9 @@ router.post('/compare', compare)
 router.post('/analysesb', analysesb)
 router.post('/upload', upload)
 router.post('/searchFace', searchFace)
+router.post('/edituser', edituser)
 router.get('/comparePhoto/:id', compareById)
+
 
 
 module.exports = router
