@@ -27,7 +27,114 @@
               </span>Upload</button>
                         </span>
                     </div>
-                    <!-- /input-group image-preview [TO HERE]-->
+                </div>
+                <div class="panel-body" ng-show="faceData">
+                    <div class="panel-body row">
+                        <ul class="list-group col-xs-6">
+                            <li class="list-group-item">
+                                <h3>Attributes</h3></li>
+                            <li class="list-group-item">Est age: {{faceData.age_est.value}}</li>
+                            <li class="list-group-item">Gender: {{faceData.gender.value}}</li>
+                            <li class="list-group-item">Mood: {{faceData.mood.value}}</li>
+                            <li class="list-group-item">Smiling: {{faceData.smiling.value}}</li>
+                            <li class="list-group-item">Surprise: {{faceData.surprise.value}}</li>
+                            <li class="list-group-item">Happiness: {{faceData.happiness.value}}</li>
+                            <li class="list-group-item">Disgust: {{faceData.disgust.value}}</li>
+                            <li class="list-group-item">Anger: {{faceData.anger.value}}</li>
+                            <li class="list-group-item">Fear: {{faceData.fear.value}}</li>
+                            <li class="list-group-item">Sadness: {{faceData.sadness.value}}</li>
+                            <li class="list-group-item">Glasses: {{faceData.glasses.value}}</li>
+                            <li class="list-group-item">Sunglasses: {{faceData.dark_glasses.value}}</li>
+                        </ul>
+                        <ul class="list-group col-xs-6">
+                            <li class="list-group-item">
+                                <h3>Confidence</h3></li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.age_est.confidence + '%'}">
+                                        {{faceData.age_est.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.gender.confidence + '%'}">
+                                        {{faceData.gender.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.mood.confidence + '%'}">
+                                        {{faceData.mood.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.smiling.confidence + '%'}">
+                                        {{faceData.smiling.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.surprise.confidence + '%'}">
+                                        {{faceData.surprise.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.happiness.confidence + '%'}">
+                                        {{faceData.happiness.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.disgust.confidence + '%'}">
+                                        {{faceData.disgust.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.anger.confidence + '%'}">
+                                        {{faceData.anger.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.fear.confidence + '%'}">
+                                        {{faceData.fear.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.sadness.confidence + '%'}">
+                                        {{faceData.sadness.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.glasses.confidence + '%'}">
+                                        {{faceData.glasses.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width': faceData.dark_glasses.confidence + '%'}">
+                                        {{faceData.dark_glasses.confidence}}%
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,24 +142,7 @@
             <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
         </div>
     </div>
-    <div class="imageInfo">
-        <div ng-show="faceData" class="info col-md-6">
-            <!-- <ul class="infoList"> -->
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.age_est.value" cap="round" label="Age" append="years"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.anger.confidence" cap="round" label="Anger" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.disgust.confidence" cap="round" label="Disgust" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.fear.confidence" cap="round" label="Fear" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.happiness.confidence" cap="round" label="Happiness" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.happiness.confidence" cap="round" label="Happiness" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.sadness.confidence" cap="round" label="Sadness" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.surprise.confidence" cap="round" label="Surprise" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.mood.confidence" cap="round" label="Mood" append="confidence"></ng-gauge>
-            <ng-gauge size="150" type="arch" thick="15" value="faceData.neutral_mood.confidence" cap="round" label="Neutral" append="confidence"></ng-gauge>
-            <!--    <li>Estimated age: {{ faceData.age_est.value }}</li>
-                <li>The gender is: {{ faceData.gender.value }}</li>
-                <li>Wearing glasses: {{ faceData.glasses.value }}</li>
-                <li>Mood: {{ faceData.mood.value }}</li> -->
-            <!--  </ul> -->
-        </div>
+    <div ng-show="faceData" class="info col-md-offset-1 col-md-8">
+        <ng-gauge size="250" type="arch" thick="15" value="faceData.lie" cap="round" label="Lie Detector" append="%"></ng-gauge>
     </div>
 </div>
