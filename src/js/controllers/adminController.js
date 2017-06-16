@@ -53,9 +53,20 @@ function adminController($scope, Upload, vizagoService ) {
                     const auth = $scope.authEdit
 
                     vizagoService.editUser({ source, auth })
-                        .then(storeUserData => {
+                        .then(editUserData => {
 
-                            console.log(storeUserData)
+                        if ( editUserData === 'false' ) {
+                            
+                            $scope.success = false
+
+                        } else {
+
+                            $scope.success = true
+                            
+                        }
+
+                        console.log(editUserData)
+                        
                         })
 
                 })

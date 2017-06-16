@@ -1,6 +1,8 @@
 <div class="appTitle">
     <h1><a href="#!/">Admin Panel</a></h1>
+    <a href="#!/login">Back to Login</a>
 </div>
+<br/>
 <div class="container">
     <div class="col-md-6">
         <h3>Register NEW USER</h3>
@@ -53,7 +55,7 @@
         <br/>
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Authorization</span>
-            <input type="text" class="form-control" placeholder="true or false - default true" aria-describedby="basic-addon1" required ng-model="authEdit">
+            <input type="text" class="form-control" placeholder="true or false" aria-describedby="basic-addon1" required ng-model="authEdit">
         </div>
         <br/>
         <div class="panel panel-default">
@@ -79,6 +81,8 @@
               </span>Upload</button>
                     </span>
                 </div>
+                <h3 ng-if="success === false" class="glyphicon glyphicon-remove"> Sorry, this user is not registered. Go to the register panel first!</h3>
+                <h3 ng-if="success === true" class="glyphicon glyphicon-ok"> Success!</h3>
                 <div class="panel-body">
                     <img class="img-responsive" ng-src="{{ imageLinkEdit }}" alt="">
                 </div>
