@@ -5,8 +5,6 @@
 
 # VIZAGO
 
-## Face recognition technology for all...!
-
 
 ![vizagoLanding](public/img/landing.png)
 
@@ -27,7 +25,7 @@ VISAGO was developed with a **NodeJS** and **ExpressJS** server, **AngularJS** f
 
 ## Installation
 
-In order to install VISAGO you may clone this repository. [NodeJS](https://nodejs.org/), [npm](https://www.npmjs.com/) and [MongoDB](https://www.mongodb.com/) as required.
+In order to install VISAGO you may clone this repository. [NodeJS](https://nodejs.org/), [npm](https://www.npmjs.com/) and [MongoDB](https://www.mongodb.com/) are required.
 
 To run the server: 
 ```
@@ -35,19 +33,21 @@ XXXXX npm start
 ```
 All dependencies will be installed automatically
 
-You will need a ```.env``` files containing
+You will need a ```.env``` file containing:
 ```
-DB_URI=mongodb://<dbuser>:<dbpassword>@ds035703.mlab.com:35703/vizagos
+DB_URI=mongodb://<dbuser>:<dbpassword>@ds035703.mlab.com:xxxxx/xxxxx
 CLOUD_NAME=sgarmendia
 API_KEY=XXXXXXXXXXXXX
 API_SECRET=XXXXXXXXXXXXXXXXXXXXXX
 UPLOAD_FOLDER=uploads
 ```
 
-Please contact me at sgarmendia@gmail.com in order to provide user and password for the mongodb database and th API_KEY and API_SECRET
+Please contact me at sgarmendia@gmail.com in order to provide **API_KEY** and **API_SECRET**.
+
+A mongoDB **MLAB** database can be setup by the user here: [MLAB](https://mlab.com/login/)
 
 ## API
-The project constaint relies on external API services for biometric analysis and data:
+This application relies on external API services for biometric analysis and data:
 
 * [Face++](https://www.faceplusplus.com/)
 * [SkyBiometry](https://skybiometry.com/)
@@ -55,13 +55,13 @@ The project constaint relies on external API services for biometric analysis and
 
 ## Lie Detector Disclaimer
 
-![lieDetector](public/img/lie.png)
+![lieDetector](public/img/lie.png =250x)
 
 The "lie detector" in this application was programmed mainly as a playful and fun way to enjoy the the biometric resources available. Even though it is based on sound aspects of psycological science, it is not intended as a real detector of lies or potential for lying. It is not valid for, and should not be used in any case for any other purpose than fun exchanges and innocent games. 
 
 ## Coding Style
 
-All the code has been developed under the [JavaScript Standard Style](http://standardjs.com/)
+The code has been developed under the [JavaScript Standard Style](http://standardjs.com/)
 
 
 ## Author
