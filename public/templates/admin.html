@@ -2,48 +2,87 @@
     <h1><a href="#!/">Admin Panel</a></h1>
 </div>
 <div class="container">
-    <div class="input-group col-md-6">
-        <span class="input-group-addon" id="basic-addon1">Name</span>
-        <input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" required ng-model="name">
-    </div>
-    <br/>
-    <div class="input-group col-md-6">
-        <span class="input-group-addon" id="basic-addon1">Authorization</span>
-        <input type="text" class="form-control" placeholder="true or false - default true" aria-describedby="basic-addon1" required ng-model="auth">
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading"><strong>Submit</strong> <small> </small></div>
-                <div class="panel-body">
-                    <div class="input-group image-preview">
-                        <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
-                        <!-- don't give a name === doesn't send on POST/GET -->
-                        <span class="input-group-btn">
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Name</span>
+            <input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" required ng-model="name">
+        </div>
+        <br/>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Authorization</span>
+            <input type="text" class="form-control" placeholder="true or false - default true" aria-describedby="basic-addon1" required ng-model="auth">
+        </div>
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Submit photo of User to register</strong> <small> </small></div>
+            <div class="panel-body">
+                <div class="input-group image-preview">
+                    <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                    <!-- don't give a name === doesn't send on POST/GET -->
+                    <span class="input-group-btn">
               <!-- image-preview-clear button -->
               <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
               <span class="glyphicon glyphicon-remove"></span> Clear </button>
-                        <!-- image-preview-input -->
-                        <div class="btn btn-default image-preview-input">
-                            <span class="glyphicon glyphicon-folder-open"></span>
-                            <span class="image-preview-input-title">Browse</span>
-                            <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
-                            <!-- rename it -->
-                        </div>
-                        <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
-                            <span class="btn-label">
+                    <!-- image-preview-input -->
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">Browse</span>
+                        <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                        <!-- rename it -->
+                    </div>
+                    <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                        <span class="btn-label">
                 <i class="glyphicon glyphicon-upload"></i>
               </span>Upload</button>
-                        </span>
-                    </div>
-                    <!-- /input-group image-preview [TO HERE]-->
+                    </span>
                 </div>
+                <!-- /input-group image-preview [TO HERE]-->
             </div>
         </div>
         <div class="col-md-6">
             <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
         </div>
     </div>
-    <div class="row">
+<!-- USER REGISTER BEGINS HERE  -->
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Name</span>
+            <input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" ng-disabled="true" ng-model="name">
+        </div>
+        <br/>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Authorization</span>
+            <input type="text" class="form-control" placeholder="true or false - default true" aria-describedby="basic-addon1" required ng-model="auth">
+        </div>
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>Submit photo of User to edit</strong> <small> </small></div>
+            <div class="panel-body">
+                <div class="input-group image-preview">
+                    <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                    <!-- don't give a name === doesn't send on POST/GET -->
+                    <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                    <!-- image-preview-input -->
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">Browse</span>
+                        <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                        <!-- rename it -->
+                    </div>
+                    <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                        <span class="btn-label">
+                <i class="glyphicon glyphicon-upload"></i>
+              </span>Upload</button>
+                    </span>
+                </div>
+                <!-- /input-group image-preview [TO HERE]-->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
+        </div>
     </div>
+</div>
