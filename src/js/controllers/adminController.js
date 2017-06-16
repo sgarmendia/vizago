@@ -1,4 +1,4 @@
-function adminController($scope, Upload, vizagoService, ) {
+function adminController($scope, Upload, vizagoService ) {
 
     (() => {
 
@@ -33,26 +33,26 @@ function adminController($scope, Upload, vizagoService, ) {
 
 //FUNCTIONS FOR EDITING
 
-        $scope.fileSelected = (files) => {
+        $scope.fileSelectedEdit = (files) => {
             if (files && files.length) {
-                $scope.file = files[0];
+                $scope.fileEdit = files[0];
             }
         }
 
-        $scope.uploadFile = function() {
+        $scope.uploadFileEdit = function() {
 
             const url = '/upload' //node.js route
-            const file = $scope.file
+            const file = $scope.fileEdit
 
             Upload.upload({ url, file })
                 .success(({ imageLink }) => {
-                    $scope.imageLink = imageLink
+                    $scope.imageLinkEdit = imageLink
                     console.log(imageLink)
 
                     const source = imageLink
-                    const { name , auth } = $scope
+                    const auth = $scope.authEdit
 
-                    vizagoService.storeUser({ source, name, auth })
+                    vizagoService.editUser({ source, auth })
                         .then(storeUserData => {
 
                             console.log(storeUserData)

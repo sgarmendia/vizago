@@ -3,6 +3,7 @@
 </div>
 <div class="container">
     <div class="col-md-6">
+        <h3>Register NEW USER</h3>
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Name</span>
             <input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" required ng-model="name">
@@ -36,15 +37,15 @@
               </span>Upload</button>
                     </span>
                 </div>
-                <!-- /input-group image-preview [TO HERE]-->
+                <div class="panel-body">
+                    <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
-        </div>
     </div>
-<!-- USER REGISTER BEGINS HERE  -->
+    <!-- USER EDIT BEGINS HERE  -->
     <div class="col-md-6">
+        <h3>Edit Authorization for CURRENT USER</h3>
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Name</span>
             <input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" ng-disabled="true" ng-model="name">
@@ -52,14 +53,14 @@
         <br/>
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Authorization</span>
-            <input type="text" class="form-control" placeholder="true or false - default true" aria-describedby="basic-addon1" required ng-model="auth">
+            <input type="text" class="form-control" placeholder="true or false - default true" aria-describedby="basic-addon1" required ng-model="authEdit">
         </div>
         <br/>
         <div class="panel panel-default">
             <div class="panel-heading"><strong>Submit photo of User to edit</strong> <small> </small></div>
             <div class="panel-body">
                 <div class="input-group image-preview">
-                    <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                    <input ng-model="fileEdit.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
                     <!-- don't give a name === doesn't send on POST/GET -->
                     <span class="input-group-btn">
               <!-- image-preview-clear button -->
@@ -69,20 +70,19 @@
                     <div class="btn btn-default image-preview-input">
                         <span class="glyphicon glyphicon-folder-open"></span>
                         <span class="image-preview-input-title">Browse</span>
-                        <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                        <input ngf-select="fileSelectedEdit($files)" type="file" accept="'image/*'" name="file" />
                         <!-- rename it -->
                     </div>
-                    <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                    <button ng-click="uploadFileEdit()" type="button" class="btn btn-labeled btn-primary">
                         <span class="btn-label">
                 <i class="glyphicon glyphicon-upload"></i>
               </span>Upload</button>
                     </span>
                 </div>
-                <!-- /input-group image-preview [TO HERE]-->
+                <div class="panel-body">
+                    <img class="img-responsive" ng-src="{{ imageLinkEdit }}" alt="">
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
         </div>
     </div>
 </div>
