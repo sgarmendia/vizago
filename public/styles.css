@@ -41,26 +41,16 @@
     .vizagoOptions .thumbnail .imgL {
       width: 100%; }
 
-/*@vizagoBlue = rgb(160,207,234);*/
-/*#togglingForm > div {
-    margin-left: 20px;
-}
+/*
+body > ng-view > div.container.ng-scope > div.row > div:nth-child(1) > div > div:nth-child(3) > div > ul:nth-child(2) > li > div {margin-bottom: 0px;}
 
-.imageInfo {
+body > ng-view > div.container.ng-scope > div.row > div:nth-child(1) > div > div:nth-child(3) > div > ul > li:nth-child(1) > h3 {margin: 0px;}
 
-  .image {
-
-    img {
-      max-width:100%;
-      max-height:100%;
-    }
-  }
-}
 */
-body > ng-view > div.container.ng-scope > div.row > div:nth-child(1) > div > div:nth-child(3) > div > ul:nth-child(2) > li > div {
+.barList > li > div {
   margin-bottom: 0px; }
 
-body > ng-view > div.container.ng-scope > div.row > div:nth-child(1) > div > div:nth-child(3) > div > ul > li:nth-child(1) > h3 {
+.metrics > ul > li:nth-child(1) > h3 {
   margin: 0px; }
 
 .compare .form-group .searchDiv1 {
