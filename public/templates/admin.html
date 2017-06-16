@@ -39,6 +39,8 @@
               </span>Upload</button>
                     </span>
                 </div>
+                 <h3 ng-if="reg === false" class="glyphicon glyphicon-remove"> Sorry, this image can not be recognized!</h3>
+                <h3 ng-if="reg === true" class="glyphicon glyphicon-ok"> Success!</h3>
                 <div class="panel-body">
                     <img class="img-responsive" ng-src="{{ imageLink }}" alt="">
                 </div>

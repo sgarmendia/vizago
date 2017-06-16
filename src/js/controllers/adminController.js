@@ -25,6 +25,15 @@ function adminController($scope, Upload, vizagoService ) {
                     vizagoService.storeUser({ source, name, auth })
                         .then(storeUserData => {
 
+                            if ( storeUserData._id ) {
+                            
+                            $scope.reg = true
+
+                        } else {
+
+                            $scope.reg = false
+                            
+                        }
                             console.log(storeUserData)
                         })
 
