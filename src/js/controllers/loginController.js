@@ -22,8 +22,10 @@ function loginController($scope, Upload, vizagoService) {
             .then( searchData => {
 
               if (searchData === 'false') {
-
+                
+                $scope.data = {}
                 $scope.data.auth = 'unregistered'
+                console.log($scope.data.auth)
 
               } else {
 
