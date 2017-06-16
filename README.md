@@ -23,6 +23,9 @@ VISAGO was developed with a **NodeJS** and **ExpressJS** server, **AngularJS** f
 ![vizagoOptions](public/img/options.png)
 
 
+![compare](public/img/compare.png)
+
+
 ## Installation
 
 In order to install VISAGO you may clone this repository. [NodeJS](https://nodejs.org/), [npm](https://www.npmjs.com/) and [MongoDB](https://www.mongodb.com/) are required.
@@ -55,7 +58,7 @@ This application relies on external API services for biometric analysis and data
 
 ## Lie Detector Disclaimer
 
-![lieDetector](public/img/lie.png =250x)
+![lieDetector](public/img/lie.png=250)
 
 The "lie detector" in this application was programmed mainly as a playful and fun way to enjoy the the biometric resources available. Even though it is based on sound aspects of psycological science, it is not intended as a real detector of lies or potential for lying. It is not valid for, and should not be used in any case for any other purpose than fun exchanges and innocent games. 
 
