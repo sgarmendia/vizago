@@ -7,17 +7,22 @@
 
 ## Face recognition technology for all...!
 
-![vizagoLanding](public/img/vizagoLanding.jpg)
+
+![vizagoLanding](public/img/landing.png)
+
 
 This repository contains **Full-Stack** (**MEAN**) project visago. An app that is designed to make accesible to the general public the powerful practical applications of face recognition technology and biometrics. And also to have fun! 
 
 Explore VISAGO here: [vizago](https://vizago.herokuapp.com/#!/)
 
+
+![analysisExample](public/img/analysis.png)
+
+
 VISAGO was developed with a **NodeJS** and **ExpressJS** server, **AngularJS** for the client and **MongoDB/Mongoose** for our DataBase.
 
-## Coding Style
 
-All the code has been developed under the [JavaScript Standard Style](http://standardjs.com/)
+![vizagoOptions](public/img/options.png)
 
 
 ## Installation
@@ -47,16 +52,27 @@ The project constaint relies on external API services for biometric analysis and
 * [Face++](https://www.faceplusplus.com/)
 * [SkyBiometry](https://skybiometry.com/)
 
+
 ## Lie Detector Disclaimer
+
+![lieDetector](public/img/lie.png)
 
 The "lie detector" in this application was programmed mainly as a playful and fun way to enjoy the the biometric resources available. Even though it is based on sound aspects of psycological science, it is not intended as a real detector of lies or potential for lying. It is not valid for, and should not be used in any case for any other purpose than fun exchanges and innocent games. 
 
+## Coding Style
+
+All the code has been developed under the [JavaScript Standard Style](http://standardjs.com/)
+
+
 ## Author
+
 [Simon Garmendia](https://github.com/sgarmendia)
+
 
 ## Built With
 
 * [SublimeText](http://https://https:/npmdejs.org/www.sublimetext.com) - Text editor
+
 
 ## Acknowledgments
 
